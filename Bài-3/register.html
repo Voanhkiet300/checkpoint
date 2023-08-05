@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="show.html">account information</a>
+    <form action="" id="form">
+      <h3>Register</h3>
+      <input type="text" name="username" placeholder="username" id="username" />
+      <input type="email" name="email" placeholder="email" id="email" />
+      <input type="password" name="password" placeholder="password" id="password" />
+      <a href="register.html">Don't have an account?</a>
+      <input type="submit" value="Register" />
+      <script>
+        let users = JSON.parse(localStorage.getItem('users')) || []
+        localStorage.getItem
+        let formElemment = document.getElementById('form')
+        let usernameElemment = document.getElementById('username')
+        let emailElemment = document.getElementById('email')
+        let passwordElemment = document.getElementById('password')
+
+        formElemment.addEventListener('submit', function (event) {
+          event.preventDefault()
+          const usernameVallue = usernameElemment.value
+          const emailVallue = emailElemment.value
+          const passwordVallue = passwordElemment.value
+          users.push(
+            {
+              username: usernameVallue,
+              email: emailVallue,
+              password: passwordVallue
+            }
+          )
+          console.log(users);
+            localStorage.setItem('users', JSON.stringify(users))
+        })
+      </script>
+    </form>
+  </body>
+</html>

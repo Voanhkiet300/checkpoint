@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n = prompt('nhập chiều cao của tam giác')
+        let q = ''
+        for (let i = n; i > 1; i--) {
+            q = q + ' '
+        }
+        let y = '*'
+        console.log(q + y);
+        for (let a = 1; a < n - 1; a++) {
+
+            let x = ''
+            for (let b = n; b > a + 1; b--) {
+                x = x + ' '
+            }
+            let z = ''
+            for (let c = 1; c < a; c++) {
+                z = z + ' '
+            }
+            k = x + y + z + z + ' ' + y
+            console.log(k);
+        }
+        let m = ''
+        for (let d = 0; d < n - 1; d++) {
+            m = m + '**'
+        }
+        console.log(m + '*');
+    </script>
+</body>
+
+</html>

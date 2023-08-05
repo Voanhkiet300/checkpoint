@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="register.html">register</a>
+    <div id="accountinfo">
+        <p class="username">username: </p>
+        <p class="email">email: </p>
+        <p class="password">password: </p>
+        <hr>
+    </div>
+    <script>
+        let users = JSON.parse(localStorage.getItem('users')) || []
+        const accountinfoElemment = document.getElementById('accountinfo')
+        console.log(accountinfoElemment);
+        console.log(users);
+        var accountinfoHTML = ''
+        for (let user of users) {
+            accountinfoHTML += `<div id="accountinfo">
+        <p class="username">username: ${user.username}</p>
+        <p class="email">email: ${user.email}</p>
+        <p class="password">password: ${user.password}</p>
+        <hr>
+        </div>`;
+        }
+        console.log(accountinfoHTML);
+        accountinfoElemment.innerHTML = accountinfoHTML
+    </script>
+</body>
+
+</html>
